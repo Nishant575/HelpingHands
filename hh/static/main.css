@@ -4,6 +4,18 @@ body{
     color: rgb(19, 19, 19);
 }
 
+nav a{
+
+    font-size: 1.3em;
+    color: #001310;
+}
+
+.logo{
+
+    color: #FF892D;
+    font-family: 'Secular One', sans-serif;
+
+}
 .searchbar{
 
     text-align: center;

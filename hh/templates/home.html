@@ -1,18 +1,16 @@
  {% extends "layout.html" %}
  {% block content %}
-
-   <article class="media content-section post">
-      <div class="media-body">
-         <a class="mr-2" href="#">username</a><small class="text-muted ">1 hr ago</small>
-         <h4><a class="article-title blog-title" href="#">Post title</a></h4>
-         <p class="post-content">lorem ipsum sjhfudhsn bahyshdj hsjasb jsha jshajhsb 
-            sksjdsand 
-         </p>
-         <div class="article-metadata">
-            
+   {% for post in posts %}
+      <article class="media content-section post">
+         <div class="media-body">
+            <a class="mr-2" href="#">{{ post.author }}</a><small class="text-muted float-right ">{{ post.date_posted|date:"F d, Y" }}</small>
+            <h4><a class="article-title blog-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
+            <p class="post-content">{{ post.content }} </p>
+            <div class="article-metadata">
+               <span class="text-secondary ">Total Donation required : </span><span class="font-weight-bold">Rs.{{ post.target_amt}}</span>
+               <span class="float-right">Donation Received : Rs.{{ post.curr_amt }}</span>
+            </div> 
          </div>
-         
-      </div>
-   </article>
-
+      </article>
+   {% endfor %}
  {% endblock content  %}
