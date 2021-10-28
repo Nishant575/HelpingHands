@@ -1,6 +1,7 @@
 body{
 
-    background-color: #d9e7e2;
+    background-color: #dcfff3;
+    color: rgb(19, 19, 19);
 }
 
 .searchbar{
@@ -16,5 +17,30 @@ body{
 
 .navbar{
 
-    background-color: #eedccb;
+    background-color: #ffecdb;
+}
+
+.account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+}
+
+.post{
+    background-color : rgb(245, 255, 253);
+    border-radius : 5px;
+    padding: 10px;
+}
+
+.post:hover{
+    border: 1px solid;
+    border-color: rgb(138, 98, 63);
+    box-shadow: 2px 2px 1px grey;
+}
+
+.article-img{
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
 }
