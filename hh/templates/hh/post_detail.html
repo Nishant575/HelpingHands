@@ -15,6 +15,12 @@
       </div>
       <h2 class="article-title">{{ object.title }}</h2>
       <p class="article-content">{{ object.content }}</p>
+      {% if user.is_authenticated %}
+        <div class="article-metadata">
+          <a href="{% url 'transfer' object.id %}" class="btn btn-success donate-btn">Donate</a>
+        </div> 
+      {% endif %}
     </div>
+
   </article>
 {% endblock content %}

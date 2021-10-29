@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<table class="table">
+    <legend class="border-bottom mb-4">Transactions</legend>
+    <thead>
+      <tr>
+        <th scope="col">Transaction ID</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Donor</th>
+        <th scope="col">Recepient</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tran in trans %}  
+      <tr>
+        <td>{{tran.transactn_id}}</td>
+        <td>{{ tran.amount }}</td>
+        <td>{{ tran.sender }}</td>
+        <td>{{ tran.receiver }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}
+ 

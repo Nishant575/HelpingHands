@@ -8,18 +8,23 @@
         <h2 class="account-heading">{{ user.username }}</h2>
         <p class="text-secondary">{{ user.email }}</p>
         <p class="text-secondary">{{ user.profile.bio }}</p>
+        <p class="text-secondary">Funds : Rs.{{ user.profile.funds }}</p>
+        <a href="{% url 'profile-update' %}" class="btn btn-danger">Update</a>
       </div>
     </div>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Profile Info</legend>
-            {{ u_form|crispy }}
-            {{ p_form|crispy }}
-        </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Update</button>
-        </div>
-    </form>
+    <legend class="border-bottom mb-4">Your Post's</legend>
+    {% for post in posts %}
+      <article class="media content-section post mt-5">
+         <div class="media-body">
+            <p class="mr-2">{{ post.author }}</p><small class="text-muted float-right ">{{ post.date_posted|date:"F d, Y" }}</small>
+            <h4><a class="article-title post-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
+            <p class="post-content">{{ post.content }} </p>
+            <div class="article-metadata">
+               <span class="text-secondary ">Total Donation required : </span><span class="font-weight-bold">Rs.{{ post.target_amt}}</span>
+               <span class="float-right">Donation Received : Rs.{{ post.curr_amt }}</span>
+            </div> 
+         </div>
+      </article>
+   {% endfor %}
   </div>
 {% endblock content %}

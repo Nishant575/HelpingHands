@@ -1,7 +1,7 @@
 body{
 
-    background-color: #dcfff3;
-    color: rgb(19, 19, 19);
+    background-color: #ebfff8 ;
+    color: rgb(19, 19, 19) ;
 }
 
 nav a{
@@ -14,6 +14,12 @@ nav a{
 
     color: #FF892D;
     font-family: 'Secular One', sans-serif;
+    font-size: 2rem;
+
+}
+
+.logo-2{
+    color: #0cd1a0
 
 }
 .searchbar{
@@ -40,9 +46,10 @@ nav a{
 }
 
 .post{
-    background-color : rgb(245, 255, 253);
+    background-color : rgb(240, 250, 255);
     border-radius : 5px;
     padding: 10px;
+    margin-bottom: 15px;
 }
 
 .post:hover{
@@ -55,4 +62,19 @@ nav a{
     height: 65px;
     width: 65px;
     margin-right: 16px;
+}
+
+.post-title{
+
+    color:rgb(19, 19, 19);
+    font-weight: bold;
+}
+
+.donate-btn{
+
+    margin-top: 10px;
+    width: 70px;
+    height: 30px;
+    padding: 2px;
+    font-size: 15px;   
 }

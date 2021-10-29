@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'hh.apps.HhConfig',
     'users.apps.UsersConfig',
+    'fundtrans.apps.FundtransConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',

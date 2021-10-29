@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from hh.models import Post
+from django.contrib.auth.models import User
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
 
@@ -18,7 +20,7 @@ def register(request):
 
 
 @login_required
-def profile(request):
+def profile_update(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST,
@@ -39,4 +41,10 @@ def profile(request):
         'p_form': p_form
     }
 
-    return render(request, 'profile.html', context)
+    return render(request, 'profile_update.html', context)
+
+@login_required
+def profile(request):
+    curr_user = request.user
+    posts = curr_user.post_set.all()
+    return render(request, 'profile.html',{'posts':posts})
